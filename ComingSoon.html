@@ -1,0 +1,91 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+a:link, a:visited{
+  background-color: red;
+  color: yellow;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: cursive;
+}
+a:hover, a:active {
+  background-color: rgba(8, 8, 248, 0.459);
+}
+
+
+.bgimg {
+  background-image: url('https://www.elsetge.cat/myimg/f/99-996716_this-hip-hop-by-newlifemusic-hip-hop.jpg');
+  height: 105%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+ 
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+
+.middle {
+  position: absolute;
+  top: 60%;
+  left:60%;
+  transform: translate(-20%, -50%);
+  text-align: right;
+  color: red;
+  /* font-size: 40px; */
+  font-size:4vw;
+}
+
+hr {
+  margin: auto;
+  width: 100%;
+}
+</style>
+<body>
+
+<div class="bgimg">
+    <div class="topleft">
+      <a href="" target="_blank">HiphopNVD</a>
+    </div>
+    <div class="middle">
+        <h1 id="CS" >COMING SOON</h1>
+        <hr>
+        <p id="demo" style="font-size:40px"></p>
+    </div>
+</div>
+
+<script>
+let countDownDate = new Date("Dec 19, 2030 15:37:25").getTime();
+let countdownfunction = setInterval(function() {
+    let now = new Date().getTime();
+    let distance = countDownDate - now;
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+}, 1000);
+</script>
+
+</body>
+</html> -->
