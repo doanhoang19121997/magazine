@@ -6,15 +6,151 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+/* navigation bar  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: rgba(248, 248, 248, 0.705);
+    font-family: "Poppins", sans-serif;
+}
+
+a,
+button {
+    font-family: "Poppins", sans-serif;
+}
+
+.dropdown {
+    height: 10vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    color: aliceblue;
+}
+
+.Hiphop {
+    position: relative;
+}
+
+.Hiphop ul {
+    position: absolute;
+    left: 0px;
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(238, 235, 235);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+    border-radius: 7px;
+    opacity: 0;
+    text-align: center;
+}
+
+.Hiphop li {
+    width: 100%;
+    height: 100%;
+}
+.Hiphop li:hover {
+    background-color: rgba(0, 0, 0, 0.466);
+}
+
+.Hiphop a {
+    text-decoration: none;
+}
+
+.dropdown button {
+    background: none;
+    border: none;
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    pointer-events: all;
+}
+.dropdown button:hover {
+    color: white;
+}
+
+.Hiphop button:focus + ul{
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+    z-index: 1;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: rgb(229, 255, 0);
+  padding: 5px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  border-style: groove;
+}
+ul{
+  float: left;
+  border-style: groove;
+  width: 20%;
+  height: 1000px; 
+  padding: 20px;
+}
+</style>
 <body>
     
-    <div id="header"></div>
-    <hr>
-    <div>
-        <table>
-            
-        </table>
-    </div>
+    <nav>
+        <div class="dropdown">
+            <button>Trang chủ</button>
+        <div class="Hiphop">
+            <button>Hiphop</button>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=fw3fOHnzCjI&ab_channel=DarkCode">Breakdance</a></li>
+                    <li><a href="http://hentaihaven.org/">Graffity</a></li>
+                    <li><a href="http://hanime.tv">Rap</a></li>
+                    <li><a href="http://www.tsumino.com/Books">DJ</a></li>
+                </ul>
+        </div>
+            <button>History</button>
+            <button>Legends</button>
+        </div>
+    </nav>
+
+    <header>
+        <h2>Cities</h2>
+        <img src="Logo/hiphopNVD.png" alt="hiphopNVD.png" width="150px" height="150px">
+    </header>
+      
+      <section>
+        
+        <ul>
+            <li><a href="#">London</a></li>
+            <li><a href="#">Paris</a></li>
+            <li><a href="#">Tokyo</a></li>
+        </ul>
+        
+        
+        <article>
+          <h1>London</h1>
+          <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+          <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+        </article>
+      </section>
 
 
 </body>
