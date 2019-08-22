@@ -7,7 +7,6 @@
     <title>HiphopNVD</title>
 </head>
 <style>
-/* navigation bar  */
 * {
     margin: 0;
     padding: 0;
@@ -15,15 +14,15 @@
 }
 body {
     height: 100vh;
-    background-color: rgba(248, 248, 248, 0.705);
-    font-family: "Poppins", sans-serif;
+    background: rgb(224, 217, 217);
+    font-family: Arial, Helvetica, sans-serif;
 }
 a, button {
     font-family: "Poppins", sans-serif;
 }
 .dropdown {
     height: 10vh;
-    background-color: rgb(0, 0, 0);
+    background-color:  rgb(35, 60, 93);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -61,7 +60,6 @@ a, button {
 }
 .dropdown button {
     background: none;
-    border: 1px solid rgba(255, 255, 255, 0.281) ;
     text-decoration: none;
     font-size: 25px;
     cursor: pointer;
@@ -77,43 +75,45 @@ a, button {
     transform: translateY(0px);
     z-index: 1;
 }
-* {
-  box-sizing: border-box;
-}
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-/* Style the header */
 header {
-  background-color: rgb(229, 255, 0);
+  background-color: rgb(191, 192, 185);
   padding: 5px;
   text-align: center;
   font-size: 35px;
   color: white;
   border-style: groove;
 }
-ul{
+#left{
   float: left;
-  border-style: groove;
-  width: 20%;
-  height: 1000px; 
+  width: 23%;
   padding: 20px;
 }
-
+.footer {
+  padding: 40px; 
+  text-align: center; 
+  background: rgba(74, 82, 93, 0.637); 
+  float: inline-end;
+}
+#textInf{
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
 </style>
 <body>
     
     <nav>
         <div class="dropdown">
-            <button>Trang ch?</button>
+            <button>Trang chủ</button>
         <div class="HiphopDance">
             <button>HiphopDance</button>
                 <ul>
-                    <li><a href="D:/Game/New folder/project/Comingsoon.html">Breakdance</a></li>
-                    <li><a href="D:/Game/New folder/project/inf.html">Popping</a></li>
-                    <li><a href="D:/Game/New folder/project/Comingsoon.html">Locking</a></li>
-                    <li><a href="D:/Game/New folder/project/Comingsoon.html">Choreography</a></li>
-                    <li><a href="D:/Game/New folder/project/Comingsoon.html">Else</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Breakdance</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Popping</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Locking</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Choreography</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Else</a></li>
                 </ul>
         </div>
             <button>Graffity</button>
@@ -123,26 +123,30 @@ ul{
     </nav>
 
     <header>
-        <h2>Cities</h2>
-        <img src="Logo/hiphopNVD.png" alt="hiphopNVD.png" width="150px" height="150px">
+        <h2 >Ck animation Hoa Đức Công</h2>
+        <img src="Infor/Ck.jpg" alt="Ck_animation.png" width="300px" height="300px">
     </header>
-      
-      <section>
-        
-        <ul>
+    <br>
+        <ul id="left">
             <li><a href="#">London</a></li>
             <li><a href="#">Paris</a></li>
             <li><a href="#">Tokyo</a></li>
         </ul>
-        
-        
-        <article>
-          <h1>London</h1>
-          <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-          <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
-        </article>
-      </section>
 
+        <ul id="right"></ul>
+        
+        
+            <div id="textInf">
+            <h1>London</h1>
+            <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+            <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+            </div>
+       
+        
+        <div class="footer">
+            <h2>Footer</h2>
+        </div>
+   
 
 </body>
 </html>
