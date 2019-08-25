@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+
+#cmt{
+    width: 500px;
+    margin: auto;
+    border: 1px solid #DFDFDF;
+    background: rgb(180, 179, 179);
+    border-radius: 5px;
+    height: 160px;
+}
+textarea{
+    width: 480px;
+    height: 80px;
+    margin-left: 8px;
+    margin-top: 8px;
+    border: 1px solid #DFDFDF;
+    text-indent: 10px;
+    line-height: 25px;
+}
+#name{
+    margin: 5px;
+}
+
+#button{
+    float: right;
+    margin-top: 5px;
+    margin-right: 8px;
+}
+
+</style>
+<body>
+<div id="cmt">
+    <input id="name" type="text" placeholder="Nickname của bạn là?"> <button type="submit" >ChangeNickname</button>
+    <textarea name="" id="text" cols="30" rows="10" placeholder="Cùng viết bình luận tại đây nào"></textarea>
+    <button id="button">Submit</button>
+
+</div>
+<script>
+
+let nameUser = document.getElementById(name);
+let text = document.getElementById(text);
+let button = document.getElementById(button);
+
+let inf = document.cookie;
+
+function setCookie(cname, cvalue, exdays) {
+  let day = new Date();
+  day.setTime(day.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+day.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+// function getCookie(cname) {
+//     let name = cname + "=";
+//     let ca = document.cookie.split(';');
+//     for(let i = 0; i < ca.length; i++) {
+//         let c = ca[i];
+//     while (c.charAt(0) == ' ') {
+//         c = c.substring(1);
+//     }
+//         if (c.indexOf(name) == 0) {
+//             return c.substring(name.length, c.length);
+//         }
+//     }
+//     return "";
+// }
+
+function checkCookie() {
+    let user = getCookie("username");
+    if (user != "") {
+        alert("Welcome back" + user);
+    } 
+    else {
+        user = nameUser ;
+        if (user != "" && user != null) {
+            setCookie("username", user, 120);
+        }
+        else{
+            alert("Lỗi nickname rồi kìa")
+        }
+    }
+}
+
+
+
+</script>
+
+
+</body>
+<script>
+</script>
+</html>
