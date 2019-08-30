@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HiphopNVD</title>
+</head>
+<style>
+    /* navigation bar  */
+    body {
+        height: 100vh;
+        background-image: url('http://www.sclance.com/backgrounds/hip-hop-backgrounds/hip-hop-backgrounds_1201483.jpg');
+
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "montserrat", sans-serif;
+    }
+
+    .header {
+        height: 100px;
+        background: #050505;
+        padding: 0 20px;
+        color: rgb(252, 5, 5);
+    }
+
+    .logo {
+        line-height: 100px;
+        float: left;
+        font-size: 50px;
+    }
+
+    .menu {
+        float: right;
+        line-height: 100px;
+        position: relative;
+        text-align: right;
+    }
+
+    .menu a {
+        color: rgb(145, 0, 0);
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 0px 10px;
+        transition: 0.4s;
+        background-color: black;
+    }
+
+    .show-menu-btn,
+    .hide-menu-btn {
+        transition: 0.4s;
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+    }
+
+    .show-menu-btn {
+        float: right;
+    }
+
+    .show-menu-btn i {
+        line-height: 100px;
+    }
+
+    .menu a:hover,
+    .show-menu-btn:hover,
+    .hide-menu-btn:hover {
+        color: #3498db;
+        background-color: #cce4f5;
+    }
+
+    #chk {
+        position: absolute;
+        visibility: hidden;
+        z-index: -1111;
+    }
+
+    .content {
+        padding: 0 20px;
+    }
+
+    .content img {
+        width: 100%;
+        max-width: 700px;
+        margin: 20px 0;
+    }
+
+    .content p {
+        text-align: justify;
+    }
+
+    @media screen and (max-width:800px) {
+
+        .show-menu-btn,
+        .hide-menu-btn {
+            display: block;
+        }
+
+        .menu {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #333;
+            right: -100%;
+            top: 0;
+            text-align: center;
+            padding: 80px 0;
+            line-height: normal;
+        }
+
+        .menu a {
+            display: block;
+            padding: 20px;
+        }
+
+        .hide-menu-btn {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+
+        #chk:checked~.menu {
+            right: 0;
+        }
+    }
+
+    /* dropdown */
+    ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+    ul li {
+        float: left;
+        width: 200px;
+        height: 70px;
+        text-align: center;
+        font-size: 20px;
+        background-color: black;
+        margin-right: 5px;
+    }
+
+    ul li a {
+        display: block;
+    }
+
+    ul li ul li {
+        display: none;
+    }
+
+    ul li:hover ul li {
+        display: block;
+    }
+
+    #left {
+        float: left;
+        width: 23%;
+        padding: 20px;
+    }
+
+    .footer {
+        padding: 40px;
+        text-align: left;
+        background: rgba(171, 175, 180, 0.637);
+        float: inline-end;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid rgba(128, 131, 134, 0.637)
+    }
+
+    .pic {
+        padding: 5px;
+        text-align: left;
+        background: rgba(91, 134, 185, 0.637);
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid rgba(128, 131, 134, 0.637)
+    }
+
+    .textInf {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        margin-top: 30px;
+        padding: 50px;
+    }
+
+    .text {
+        display: flex;
+        flex: 2px;
+        justify-content: space-around;
+
+    }
+
+    .Inf {
+        display: block;
+        display: -webkit-box;
+        max-width: 500px;
+        height: 150px;
+        line-height: 1.5;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+
+    }
+
+    .titleh {
+        font-size: 25px;
+
+    }
+
+    .img {
+        width: 200px;
+        height: 150px;
+    }
+
+    .pislide {
+        display: flex;
+        justify-content: space-around;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <a href="#">
+            <h2 class="logo"><a href="Magazine.html">HiphopNVD</a></h2>
+        </a>
+        <input type="checkbox" id="chk">
+        <label for="chk" class="show-menu-btn">
+            <i class="fas fa-ellipsis-h"></i>
+        </label>
+
+        <ul class="menu">
+            <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Rap</a></li>
+            <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Graffity</a></li>
+            <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">DJ</a></li>
+            <li><a class="dropdown" href="#">Hiphopdance</a>
+                <ul>
+                    <li><a href="E:/JS/fundamental/PROJECT/BreakDance.html">Breakdance</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Locking</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Choreography</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/Popping.html">Popping</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Else</a> </li>
+                </ul>
+            </li>
+        </ul>
+        <label for="chk" class="hide-menu-btn">
+            <i class="fas fa-times"></i>
+        </label>
+    </div>
+    <br>
+    <ul id="left"></ul>
+
+    <ul id="right"></ul>
+    <br>
+    <div class="textInf">
+        <button><a href="#Link">Go to bottom</a></button>
+        <br>
+        <br>
+        <br>
+        <h1 id="top">Jr. Boogaloo Popping Workshop in Hanoi</h1>
+        <p id="time">Hôm nay, Thứ sáu ngày 23 tháng 8 năm 2019 lúc 12:35:26</p>
+
+        <br>
+        <p>Lần đầu tiên, master Jr. Boogaloo sẽ đến Hà Nội!!!
+            <br>
+            <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/FloridaWS/Flo rida.jpg" alt="JrBoogaloo WS"
+                style="width:700px;height:300px">
+                <br>
+            👤 Một con người không cần phải liệt kê profile của ông ra nữa, nếu bạn là 1 người nhảy popping, bạn PHẢI
+            học thêm từ JR. BOOGALOO!
+            <br>
+
+            ❗️Dance, Popping, Waving, Tutting, Body Control, Timing, Mindset, Concept v.v...
+            Tất cả đều quy tụ đầy đủ trong người đàn ông này.
+            <br>
+            ❗️Mất cơ hội học workshop này sẽ rất tiếc đấy các bạn!!!
+            <br>
+            Không nói nhiều nữa, thông tin cụ thể đây nha:
+            <br>
+            🌐 Low Rida Crew present
+            <br>
+            *Jr. Boogaloo's Special Workshop
+            <br>
+            ❤️ Sponsored by Mr. Đức Bình ‘Seven’.
+            <br>
+            <br>
+            🏢 Low Rider Dance Studio
+            5/40 Trần Duy Hưng, Cầu Giấy, Hà Nội
+            <img src="Studio.jpg" alt="Studio" style="width:700px;height:500px">
+            <br>
+            ⏰ Thứ Bảy 14/9/2019 - 19:00
+            <br>
+            ❗️Giới hạn 50 người tham gia.
+            <br>
+            ✍️ Đăng kí:
+            <br>
+            - đóng học phí hết ngày 6/9: 500.000/người
+            <br>
+            - đóng học phí từ ngày 7/9: 700.000/người.
+            <br>Để đăng kí xin điền thông tin bao gồm tên & số điện thoại xuống bên dưới và chuyển khoản vào tài khoản
+            sau đó nhắn tin tới hotline nội dung ghi tên đăng kí của bạn
+            <br>
+            💳 Thông tin chuyển khoản:
+            <br>
+            Vietcombank: 0301 0002 96474, chi nhánh Sở Giao Dịch, chủ tk Vũ Trung Thu
+            <br>
+            Techcombank: 1902 7837 995686, chủ tk Vũ Trung Thu.
+            <br>
+            ☎️ Hotline liên hệ: 094.525.7770</p>
+
+        <a id="Link" href="https://www.facebook.com/events/459570878229064/">Link trang sự kiện</a>
+        <br>
+        <button><a href="#top">Go to top</a></button>
+    </div>
+    <br>
+
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+
+
+</body>
+
+</html>

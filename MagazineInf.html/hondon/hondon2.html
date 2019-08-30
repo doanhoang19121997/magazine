@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HiphopNVD</title>
+</head>
+<style>
+    /* navigation bar  */
+    body {
+        height: 100vh;
+        background-image: url('http://www.sclance.com/backgrounds/hip-hop-backgrounds/hip-hop-backgrounds_1201483.jpg');
+
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "montserrat", sans-serif;
+    }
+
+    .header {
+        height: 100px;
+        background: #050505;
+        padding: 0 20px;
+        color: rgb(252, 5, 5);
+    }
+
+    .logo {
+        line-height: 100px;
+        float: left;
+        font-size: 50px;
+    }
+
+    .menu {
+        float: right;
+        line-height: 100px;
+        position: relative;
+        text-align: right;
+    }
+
+    .menu a {
+        color: rgb(145, 0, 0);
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 0px 10px;
+        transition: 0.4s;
+        background-color: black;
+    }
+
+    .show-menu-btn,
+    .hide-menu-btn {
+        transition: 0.4s;
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+    }
+
+    .show-menu-btn {
+        float: right;
+    }
+
+    .show-menu-btn i {
+        line-height: 100px;
+    }
+
+    .menu a:hover,
+    .show-menu-btn:hover,
+    .hide-menu-btn:hover {
+        color: #3498db;
+        background-color: #cce4f5;
+    }
+
+    #chk {
+        position: absolute;
+        visibility: hidden;
+        z-index: -1111;
+    }
+
+    .content {
+        padding: 0 20px;
+    }
+
+    .content img {
+        width: 100%;
+        max-width: 700px;
+        margin: 20px 0;
+    }
+
+    .content p {
+        text-align: justify;
+    }
+
+    @media screen and (max-width:800px) {
+
+        .show-menu-btn,
+        .hide-menu-btn {
+            display: block;
+        }
+
+        .menu {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #333;
+            right: -100%;
+            top: 0;
+            text-align: center;
+            padding: 80px 0;
+            line-height: normal;
+        }
+
+        .menu a {
+            display: block;
+            padding: 20px;
+        }
+
+        .hide-menu-btn {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+
+        #chk:checked~.menu {
+            right: 0;
+        }
+    }
+
+    /* dropdown */
+    ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+    ul li {
+        float: left;
+        width: 200px;
+        height: 70px;
+        text-align: center;
+        font-size: 20px;
+        background-color: black;
+        margin-right: 5px;
+    }
+
+    ul li a {
+        display: block;
+    }
+
+    ul li ul li {
+        display: none;
+    }
+
+    ul li:hover ul li {
+        display: block;
+    }
+
+    #left {
+        float: left;
+        width: 23%;
+        padding: 20px;
+    }
+
+    .footer {
+        padding: 40px;
+        text-align: left;
+        background: rgba(171, 175, 180, 0.637);
+        float: inline-end;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid rgba(128, 131, 134, 0.637)
+    }
+
+    .pic {
+        padding: 5px;
+        text-align: left;
+        background: rgba(91, 134, 185, 0.637);
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid rgba(128, 131, 134, 0.637)
+    }
+
+    .textInf {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        margin-top: 30px;
+        padding: 50px;
+    }
+
+    .text {
+        display: flex;
+        flex: 2px;
+        justify-content: space-around;
+
+    }
+
+    .Inf {
+        display: block;
+        display: -webkit-box;
+        max-width: 500px;
+        height: 150px;
+        line-height: 1.5;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+
+    }
+
+    .titleh {
+        font-size: 25px;
+
+    }
+
+    .img {
+        width: 200px;
+        height: 150px;
+    }
+
+    .pislide {
+        display: flex;
+        justify-content: space-around;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <a href="#">
+            <h2 class="logo"><a href="Magazine.html">HiphopNVD</a></h2>
+        </a>
+        <input type="checkbox" id="chk">
+        <label for="chk" class="show-menu-btn">
+            <i class="fas fa-ellipsis-h"></i>
+        </label>
+
+        <ul class="menu">
+            <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Rap</a></li>
+            <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Graffity</a></li>
+            <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">DJ</a></li>
+            <li><a class="dropdown" href="#">Hiphopdance</a>
+                <ul>
+                    <li><a href="E:/JS/fundamental/PROJECT/BreakDance.html">Breakdance</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Locking</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Choreography</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/Popping.html">Popping</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Else</a> </li>
+                </ul>
+            </li>
+        </ul>
+        <label for="chk" class="hide-menu-btn">
+            <i class="fas fa-times"></i>
+        </label>
+    </div>
+    <br>
+    <ul id="left"></ul>
+
+    <ul id="right"></ul>
+    <br>
+    
+    <div class="textInf">
+        <button><a href="#Link">Go to bottom</a></button>
+        <br>
+        <br>
+        <br>
+        <h1 id="top">Hỗn Độn Jam Part 1 (2019)</h1>
+        <p id="time">Hôm nay, Thứ sáu ngày 23 tháng 8 năm 2019 lúc 12:35:26</p>
+
+        <br>
+        <h2>I. LỜI NÓI ĐẦU:</h2>
+        <p>
+                Xin chào tất cả các Dancer trên mọi miền tổ quốc, những ai đang có hứng thú và muốn tìm hiểu về HipHop – Môn nghệ thuật đường phố hàng
+                ngày đã và đang được yêu thích và phổ biến rộng rãi hơn. Chúng tôi là HP HOMIES ( #HPH), sau 1 giải đấu vô cùng thành công là Come to 
+                Funky vào đầu năm nay, đây sẽ là dự án thứ hai mà HP Homies ấp ủ thực hiện, với mong muốn mang văn hóa Hip-Hop đến gần với mọi người 
+                hơn, tạo 1 sân chơi lành mạnh cho các Dancer cũng như bất cứ ai cũng có cơ hội được cọ sát, vui chơi và gắn kết mọi cá nhân. XIN CHÍNH 
+                GIỚI THIỆU : HỖN ĐỘN JAM PART 1 </p>
+
+        <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/hondon/hondon.jpg" alt="Hỗn Độn Jam Part 1" style="width:508px;height:508px">
+        
+       
+        <h2>II. THỂ LOẠI:</h2>
+        <p>
+                Mong muốn tạo nên một bữa tiệc Hip-Hop đúng chất, bên cạnh đó kết hợp với những trận Battle để không khí thêm phần sôi nổi, BTC xin công
+                bố 2 thể loại trong Jam lần này:
+                <br>
+                POPPING 1 VS 1 
+                <br>
+                FREESTYLE 2VS 2 (CẶP SẴN)
+        </p>
+        <h2>III. THỂ THỨC THI ĐẤU:  PICK UP  (BỐC CHỌN)</h2>
+        <p>
+                Giúp cho các trận đấu thêm phần thú vị đối với thể loại Popping 1vs1 , thể thức Pick up sẽ được áp dụng sau khi hoàn thành phần Prelim
+                <br>
+                Đối với Freestyle 2vs2, thể thức Pick up áp dụng kể từ Top 8 cho đến Final 
+                <br>
+                BTC sẽ có một bài viết riêng để giải thích rõ hơn về thể thức thi đấu lần này. Tuy nhiên chắc chắn 1 điều, thể thức mới này sẽ giúp cho 
+                các trận đấu “nhiệt” và “cháy” hơn rất nhiều
+        </p>
+        <h2>V. CÁCH THỨC ĐĂNG KÝ:</h2>
+        <p>
+                Đăng ký theo Form sau:
+                <br>
+                
+                TÊN (Với tl Popping 1vs1) hoặc TÊN TEAM (Với tl Freestyle 2vs2)
+                <br>
+                THỂ LOẠI THI ĐẤU: …
+                <br>
+                TÊN THÀNH VIÊN TRONG TEAM: (Với tl Freestyle 2vs2)
+                <br>
+                SĐT LIÊN LẠC
+        </p>
+        <h2>VI. VÉ VÀ GIẢI THƯỞNG:</h2>
+        <p>
+                Vé vào cửa : 40K / 1 người (Tặng 1 bia)	
+                <br>
+                Đăng ký đấu: 90K/1 người (Tặng 1 bia + Áp dụng tất cả thể loại)
+            </p>
+        <h2>VII. Judge:</h2>
+        <p>
+                <h3>VỊ GIÁM KHẢO ĐẦU TIÊN CỦA THỂ LOẠI POPPING HỖN ĐỘN JAM PART 1</h3>
+                <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/hondon/kirby.jpg" alt="kirbyPopper" style="width:408px;height:508px">
+                <br>
+                Kirby – cái tên đã không còn quá xa lạ với cộng đồng các Popper tại Việt Nam. Những đóng góp của anh cho 
+                nền Hip Hop tại Hà Nội nói chung và Popping nói riêng là không thể phủ nhận. Với kho kiến thức đồ sộ cùng 
+                với bảng thành tích đáng nể của mình, Popper Kirby sẽ mang đến cho chúng ta những kết quả công bằng nhất. 
+                <br>
+                *** Thành tích :
+                <pre>
+                - 'Dance Y'All 2014' winner - 2014
+                - 'Show Off vol. 4' winner - 2014
+                - 'Boo Dance Showcase' winner - 2015
+                - '18+ Jam vol. 4' winner - 2017
+                - 'Sunday Morning vol. 11' winner - 2017
+                - 'Thăng Long Battle vol. 1 p.1' winner - 2017
+                - 'Bigtoe 25 years jam' freestyle winner - 2017
+                - 'Zất Là Vui' winner - 2017
+                - 'Enjoy Da Funk vol. 7' winner (Judge Jordan) - 2018
+                - 'Groove Battle vol. 5' winner - 2018
+                - 'DOD Battle Jam vol. 3' runner up - 2017
+                - 'Hanoi All In One 2016' top 4 (Judge Acky) - 2016
+                - 'Color Dance Battle' top 4 - 2016
+                - 'Dance Y'All 2017' top 4 - 2017
+                - 'Get Low' top 4 (Judge Dokyun) - 2018
+            </pre>
+                Judge:
+                <pre>
+                - 'Enjoy Da Funk vol. 3' - 2015
+                - 'Học Sinh Giỏi' - 2015
+                - 'Funkified' - 2017
+                - 'Dancine vol. 1' (HoChiMinh city) - 2018
+                - 'AEP's Best Dance Crew' - 2019
+            </pre>
+        </p>
+        <h3>Phát súng thứ hai của thể loại Popping 1 vs 1, và đồng thời cũng là vị giám khảo đầu tiên 
+            của thể loại Freestyle 2 vs 2</h3>
+
+           <p> Những vị trí quyền lực của Hỗn Độn Jam đã dần được hé mở, và hôm nay chúng ta sẽ cùng đến với 
+               cái tên vô cùng đặc biệt - Đại diện cho thành phố Đất Cảng
+               <br>
+                
+                🔥 POPPIN JOONG – #ONE_START 🔥
+                <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/hondon/Joong.jpg" alt="JoongPopper" style="width:700px;height:450px">
+                
+                Bề dày kinh nghiệm với hơn 10 năm kinh nghiệm luyện tập và tìm hiểu về bộ môn Popping, cái tên Joong được biết đến với những 
+                trận đấu chuyên nghiệp, chuyên môn cao đặc biệt tại miền Bắc. Sự góp mặt của anh tại giải đấu lần này chắc chắn sẽ mang tới 
+                những trận Battle máu lửa đậm vị Hải Phòng</h3>
+            </p>
+        <h3>VỊ JUGDE THỨ 2 CỦA THỂ LOẠI FREESTYLE 2 VS 2 </h3>
+        <p>
+    DANCER BIMAX - #NEW_YORK_STYLE & 81 DAYS CREW
+    <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/hondon/Bimax.jpg" alt="DancerBimax" style="width:700px;height:450px">
+    
+    Với kinh nghiệm lâu năm khi theo đuổi bộ môn Hip Hop, chinh chiến tại khắp các giải đấu cả quốc tế lẫn trong nước,
+    anh Bimax đã và đang tiếp lửa cho rất nhiều những bạn trẻ có niềm yêu thích bộ môn nghệ thuật này. Hãy cùng chờ đón những bất
+    ngờ mà Dancer Bimax mang đến cho HỖN ĐỘN JAM nhé!
+</p>
+        <h3>VỊ TRÍ QUYỀN LỰC CUỐI CÙNG CỦA THỂ LOẠI FREESTYLE 2vs2 </h3>
+    
+    Bboy Sailor D – Titan Crew / The Last Battle / Hanoi Allstar
+    <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/hondon/Bboy Sailor D.jpg" alt="Bboy Sailor D"  style="width:500px;height:750px" >
+    <p>
+    Sailor D đang là một trong những cái tên nổi bật nhất tại HN với bộ môn Breaking. Chỉ riêng trong năm 2019, anh đã chinh phục
+     được rất nhiều những giải đấu danh giá. Chắc chắn rằng, đến với Hỗn Độn Jam, năng lượng mà Bboy Sailor D sẽ khiến cho các khán 
+     giả của chúng ta phải "trầm trồ"
+     <br>
+     *** Thành tích :
+    </p>
+    <pre>
+    - Champion BBIC Hanoi all in one Breaking 
+    - Final Hanoi all in one allstye 1on1 
+    - Champion Redbull DTUM breaking battle 
+    - Champion Redbull allstyle battle 
+    - Final BBiC asia
+    </pre>
+    <h3>NHỮNG ANH CHÀNG KHÔNG THỂ THIẾU CỦA MỌI BỮA TIỆC</h3>
+    <p>
+
+            ▪️ Nhân tố quan trọng bậc nhất làm nên không khí sôi động của Jam
+            <br>
+            
+            ▪️ Những người dẫn dắt cảm xúc chúng ta trong suốt thời lượng của Hỗn Độn Jam
+            <br>
+            
+            Cùng chào đón 2 anh DJ vô cùng tài năng của HỖN ĐỘN JAM
+            <br>
+            
+            - DJ DUY NGUYEN (#Abnormal_Conceptz)
+            <br>
+            
+            - DJ DDAS (#RealSoundHomiez_Team)
+            <br>
+            Một bữa tiệc của âm nhạc đầy màu sắc, những giây phút thăng hoa của các Dancer – HON DON JAM IS COMING
+            <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/hondon/DJ (1).jpg" alt="Dj"  style="width:700px;height:450px" >
+            <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/hondon/DJ (2).jpg" alt="Dj"  style="width:700px;height:450px">
+
+        </p>
+        <a id="Link" href="https://www.facebook.com/events/2192796964151062/permalink/2232956826801742/" >Link trang sự kiện</a>
+        <br>
+        <br>
+        <button><a href="#top">Go to top</a></button>
+         </div>
+    <br>
+    
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>

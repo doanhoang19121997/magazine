@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HiphopNVD</title>
+</head>
+<style>
+  /* navigation bar  */
+  body {
+    height: 100vh;
+    background-image: url('http://www.sclance.com/backgrounds/hip-hop-backgrounds/hip-hop-backgrounds_1201483.jpg');
+
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat", sans-serif;
+  }
+
+  .header {
+    height: 100px;
+    background: #050505;
+    padding: 0 20px;
+    color: rgb(252, 5, 5);
+  }
+
+  .logo {
+    line-height: 100px;
+    float: left;
+    font-size: 50px;
+    
+  }
+
+  .menu {
+    float: right;
+    line-height: 100px;
+    position: relative;
+    text-align: right;
+  }
+
+  .menu a {
+    color: rgb(145, 0, 0);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0px 10px;
+    transition: 0.4s;
+    background-color: black;
+  }
+
+  .show-menu-btn,
+  .hide-menu-btn {
+    transition: 0.4s;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+  }
+
+  .show-menu-btn {
+    float: right;
+  }
+
+  .show-menu-btn i {
+    line-height: 100px;
+  }
+
+  .menu a:hover,
+  .show-menu-btn:hover,
+  .hide-menu-btn:hover {
+    color: #3498db;
+    background-color: #cce4f5;
+  }
+
+  #chk {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1111;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .content img {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+  }
+
+  .content p {
+    text-align: justify;
+  }
+
+  @media screen and (max-width:800px) {
+
+    .show-menu-btn,
+    .hide-menu-btn {
+      display: block;
+    }
+
+    .menu {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #333;
+      right: -100%;
+      top: 0;
+      text-align: center;
+      padding: 80px 0;
+      line-height: normal;
+    }
+
+    .menu a {
+      display: block;
+      padding: 20px;
+    }
+
+    .hide-menu-btn {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+    }
+
+    #chk:checked~.menu {
+      right: 0;
+    }
+  }
+
+  /* dropdown */
+  ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+  }
+
+  ul li {
+    float: left;
+    width: 200px;
+    height: 70px;
+    text-align: center;
+    font-size: 20px;
+    background-color: black;
+    margin-right: 5px;
+  }
+
+  ul li a {
+    display: block;
+  }
+
+  ul li ul li {
+    display: none;
+  }
+
+  ul li:hover ul li {
+    display: block;
+  }
+
+  #left {
+    float: left;
+    width: 23%;
+    padding: 20px;
+  }
+
+  .footer {
+    padding: 50px;
+    text-align: left;
+    background: rgba(160, 164, 170, 0.822);
+    float: inline-end;
+    font-size: 18px;
+    color:gold;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid rgba(128, 131, 134, 0.596)
+  }
+
+  .pic {
+    padding: 5px;
+    text-align: left;
+    background: rgba(52, 130, 144, 0.335);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid rgba(128, 131, 134, 0.637)
+  }
+
+  #textInf {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    margin-top: 30px;
+    padding: 50px;
+  }
+
+  /* slide */
+  .mySlides {
+    display: none;
+  }
+
+  .imgSlide {
+    vertical-align: middle;
+  }
+
+
+  .slideshow-container {
+    max-width: 700px;
+    position: relative;
+    margin: auto;
+  }
+
+
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active {
+    background-color: #717171;
+  }
+
+
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    .text {
+      font-size: 11px
+    }
+  }
+
+  .text {
+    display: flex;
+    flex: 2px;
+    justify-content: space-around;
+
+  }
+
+  .Inf {
+    display: block;
+    display: -webkit-box;
+    max-width: 500px;
+    height: 150px;
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+
+  }
+
+  .titleh {
+    font-size: 25px;
+
+  }
+
+  .img {
+    width: 200px;
+    height: 150px;
+  }
+
+  .pislide {
+    display: flex;
+    justify-content: space-around;
+  }
+</style>
+
+<body>
+  <div class="header">
+    <a href="#">
+        <h2 class="logo"><a href="Magazine.html" >HiphopNVD</a></h2>
+    </a>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
+
+    <ul class="menu">
+      <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Rap</a></li>
+      <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Graffity</a></li>
+      <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">DJ</a></li>
+      <li><a class="dropdown" href="#">Hiphopdance</a>
+        <ul>
+          <li><a href="BreakDance.html">Breakdance</a></li>
+          <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Locking</a></li>
+          <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Choreography</a></li>
+          <li><a href="E:/JS/fundamental/PROJECT/Popping.html">Popping</a></li>
+          <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Else</a> </li>
+        </ul>
+      </li>
+    </ul>
+    <label for="chk" class="hide-menu-btn">
+      <i class="fas fa-times"></i>
+    </label>
+  </div>
+  <br>
+  <ul id="left">
+
+  </ul>
+
+  <ul id="right"></ul>
+
+
+  <div id="textInf">
+
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img class="imgSlide" src="E:/JS/fundamental/PROJECT/slideMGZ/hondon.jpg" style="width:100%">
+        <div class="text"><a href="E:/JS/fundamental/PROJECT/MagazineInf.html/hondon/Hondon.html">Hỗn độn Jam</a></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img class="imgSlide" src="E:/JS/fundamental/PROJECT/slideMGZ/Flo rida.jpg" style="width:100%">
+        <div class="text"><a href="E:/JS/fundamental/PROJECT/MagazineInf.html/FloridaWS/WS.html">Jr.Boogaloo special
+            workshop</a></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img class="imgSlide" src="E:/JS/fundamental/PROJECT//slideMGZ/wsv3v2.jpg" style="width:100%">
+        <div class="text"><a href="E:/JS/fundamental/PROJECT/MagazineInf.html/WonderSummer/WS2019.html">Wonder Summer
+            2019 & The Ladies Call VN Qualifier</a></div>
+      </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div>
+      <div class="text">
+        <img class="img" src="E:/JS/fundamental/PROJECT/slideMGZ/1.jpg" alt="">
+        <div>
+          <h1 class="titleh"><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">JUST DANCE VOL.2</a></h1>
+          <p class="Inf"> Năm nay chúng mình sẽ trở lại đem đến cho những người
+            đam mê nhảy múa một bầu không khí mới, một chương trình hoàn toàn
+            mới cho các cá nhân và tập thể đam mê nghệ thuật ở tỉnh Hải Dương
+            .</p>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <div>
+      <div class="text">
+        <img class="img" src="E:/JS/fundamental/PROJECT/slideMGZ/vietgangz.jpg" alt="">
+        <div>
+          <h1 class="titleh"><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Vietgangz Hiphop Connection 2017</a>
+          </h1>
+          <p class="Inf">Chào mừng đến với Vietgangz Hiphop Connection 2017 , với
+            tiêu chí support cho nền văn hóa HipHop đặc biệt là Bboy và Bgirl
+            ...</p>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <div>
+      <div class="text">
+        <img class="img" src="E:/JS/fundamental/PROJECT/slideMGZ/graffity.jpg" alt="">
+        <div>
+          <h1 class="titleh"><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">JUST DANCE VOL.2</a></h1>
+          <p class="Inf">“Meeting of Styles” là một sự kiện cộng đồng dành cho những
+            hoạ sĩ Graffiti và những ai yêu thích bộ môn nghệ thuật này có cơ hội được
+            cùng nhau gặp gỡ và giao lưu. Sự kiện này được tổ chức mỗi năm một...
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <div>
+      <div class="text">
+        <img class="img" src="E:/JS/fundamental/PROJECT/slideMGZ/banner-hiphop-33.jpg" alt="">
+        <div>
+          <h1 class="titleh"><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Ngày hội Hiphop Huế – Urban JAM 2019
+            </a></h1>
+          <p class="Inf">Ngày hội Hiphop Huế – Urban JAM 2019 là sự kiện lớn được tổ chức
+            bởi Sở Du lịch tỉnh Thừa Thiên Huế. Có thể nói, đây là sự kiện Hiphop lớn nhất
+            từ trước đến nay được tổ chức tại Huế, là dịp để hơn 500 dancer hội tụ
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <div>
+      <div class="text">
+        <img class="img" src="E:/JS/fundamental/PROJECT/slideMGZ/Flo rida.jpg" alt="">
+        <div>
+          <h1 class="titleh"><a href="E:/JS/fundamental/PROJECT/MagazineInf.html/FloridaWS/WS.html">Jr. Boogaloo Popping
+              Workshop in Hanoi</a></h1>
+          <p class="Inf">Hot nhất 2019 ??!!
+            <br>
+
+            ☝️ Lần đầu tiên, master Jr. Boogaloo sẽ đến Hà Nội!!!
+
+            .</p>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <div>
+      <div class="text">
+        <img class="img" src="E:/JS/fundamental/PROJECT/slideMGZ/hondon.jpg" alt="">
+        <div>
+          <h1 class="titleh"><a href="E:/JS/fundamental/PROJECT/MagazineInf.html/hondon/Hondon.html">Hỗn Độn Jam Part 1
+              (2019)</a></h1>
+          <p class="Inf">Đây sẽ là dự án thứ hai mà HP Homies ấp ủ thực hiện, với mong
+            muốn mang văn hóa Hip-Hop đến gần với mọi người hơn, tạo 1 sân chơi lành
+            mạnh cho các Dancer cũng như bất cứ ai...
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center">
+      <a href="E:/JS/fundamental/PROJECT/magagize2.html">Xem thêm>></a>
+  
+    </div>
+  </div>
+  <br>
+  <div class="pic">
+    <h1 style="font-size:40px;color: gold">Hiphop</h1>
+    <br>
+
+    <div class="pislide">
+      <img src="E:/JS/fundamental/PROJECT/1722035359.jpeg" alt="" width="200px" height="150px">
+      <img src="E:/JS/fundamental/PROJECT/wc1745008.jpg" alt="" width="200px" height="150px">
+      <img src="E:/JS/fundamental/PROJECT/videos-de-rap-deltron.jpg" alt="" width="200px" height="150px">
+      <img src="E:/JS/fundamental/PROJECT/download (1).jpg" alt="" width="200px" height="150px">
+      <img src="E:/JS/fundamental/PROJECT/images (1).jpg" alt="" width="200px" height="150px">
+      
+      <br>
+      <a href="E:/JS/fundamental/PROJECT/ComingSoon.html" style="color: red">Xem thêm >></a>
+
+    </div>
+  </div>
+  
+  
+  <div class="footer">
+    <table>
+      <tr>
+        <td>Thực hiện bởi:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Đo</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>SDT:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 3000);
+    }
+
+
+
+  </script>
+</body>
+
+</html>

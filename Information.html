@@ -4,18 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>HiphopNVD</title>
 </head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    background: rgb(224, 217, 217);
+    font-family: Arial, Helvetica, sans-serif;
+}
+a, button {
+    font-family: "Poppins", sans-serif;
+}
+.dropdown {
+    height: 10vh;
+    background-color:  rgb(35, 60, 93);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    
+    
+}
+.HiphopDance {
+    position: relative;
+}
+.HiphopDance ul {
+    position: absolute;
+    left: 0px;
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(238, 235, 235);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+    border-radius: 7px;
+    opacity: 0;
+    text-align: center;
+}
+.HiphopDance li {
+    width: 100%;
+    height: 100%;
+}
+.HiphopDance li:hover {
+    background-color: rgba(0, 0, 0, 0.466);
+}
+.HiphopDance a {
+    text-decoration: none;
+}
+.dropdown button {
+    background: none;
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    pointer-events: all;
+    color: red;
+}
+.dropdown button:hover {
+    color: yellow;
+}
+.HiphopDance button:focus + ul{
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+    z-index: 1;
+}
+header {
+  background-color: rgb(191, 192, 185);
+  padding: 5px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  border-style: groove;
+}
+#left{
+  float: left;
+  width: 23%;
+  padding: 20px;
+}
+.footer {
+  padding: 40px; 
+  text-align: center; 
+  background: rgba(74, 82, 93, 0.637); 
+  float: inline-end;
+}
+#textInf{
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+</style>
 <body>
     
-    <div id="header"></div>
-    <hr>
-    <div>
-        <table>
-            
-        </table>
-    </div>
+    <nav>
+        <div class="dropdown">
+            <button>Trang chủ</button>
+        <div class="HiphopDance">
+            <button>HiphopDance</button>
+                <ul>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Breakdance</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Popping</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Locking</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Choreography</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Else</a></li>
+                </ul>
+        </div>
+            <button>Graffity</button>
+            <button>Rap</button>
+            <button>DJ</button>
+        </div>
+    </nav>
 
+    <header>
+        <h2 >Ck animation Hoa Đức Công</h2>
+        <img src="Infor/Ck.jpg" alt="Ck_animation.png" width="300px" height="300px">
+        
+    </header>
+    <br>
+        <ul id="left">
+            <li><a href="#">London</a></li>
+            <li><a href="#">Paris</a></li>
+            <li><a href="#">Tokyo</a></li>
+        </ul>
+
+        <ul id="right"></ul>
+        
+        
+            <div id="textInf">
+            <h1>London</h1>
+            <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+            <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+            </div>
+       
+        
+        <div class="footer">
+            <h2>Footer</h2>
+        </div>
+   
 
 </body>
 </html>

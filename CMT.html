@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <style>
-
 #cmt{
     width: 500px;
     margin: auto;
@@ -28,13 +27,11 @@ textarea{
 #name{
     margin: 5px;
 }
-
 #button{
     float: right;
     margin-top: 5px;
     margin-right: 8px;
 }
-
 </style>
 <body>
 <div id="cmt">
@@ -44,20 +41,16 @@ textarea{
 
 </div>
 <script>
-
 let nameUser = document.getElementById(name);
 let text = document.getElementById(text);
 let button = document.getElementById(button);
-
 let inf = document.cookie;
-
 function setCookie(cname, cvalue, exdays) {
   let day = new Date();
   day.setTime(day.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+day.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-
 // function getCookie(cname) {
 //     let name = cname + "=";
 //     let ca = document.cookie.split(';');
@@ -72,7 +65,6 @@ function setCookie(cname, cvalue, exdays) {
 //     }
 //     return "";
 // }
-
 function checkCookie() {
     let user = getCookie("username");
     if (user != "") {
@@ -88,9 +80,6 @@ function checkCookie() {
         }
     }
 }
-
-
-
 </script>
 
 

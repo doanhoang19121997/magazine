@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HiphopNVD</title>
+</head>
+<style>
+    /* navigation bar  */
+    body {
+        height: 100vh;
+        background-image: url('http://www.sclance.com/backgrounds/hip-hop-backgrounds/hip-hop-backgrounds_1201483.jpg');
+
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "montserrat", sans-serif;
+    }
+
+    .header {
+        height: 100px;
+        background: #050505;
+        padding: 0 20px;
+        color: rgb(252, 5, 5);
+    }
+
+    .logo {
+        line-height: 100px;
+        float: left;
+        font-size: 50px;
+    }
+
+    .menu {
+        float: right;
+        line-height: 100px;
+        position: relative;
+        text-align: right;
+    }
+
+    .menu a {
+        color: rgb(145, 0, 0);
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 0px 10px;
+        transition: 0.4s;
+        background-color: black;
+    }
+
+    .show-menu-btn,
+    .hide-menu-btn {
+        transition: 0.4s;
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+    }
+
+    .show-menu-btn {
+        float: right;
+    }
+
+    .show-menu-btn i {
+        line-height: 100px;
+    }
+
+    .menu a:hover,
+    .show-menu-btn:hover,
+    .hide-menu-btn:hover {
+        color: #3498db;
+        background-color: #cce4f5;
+    }
+
+    #chk {
+        position: absolute;
+        visibility: hidden;
+        z-index: -1111;
+    }
+
+    .content {
+        padding: 0 20px;
+    }
+
+    .content img {
+        width: 100%;
+        max-width: 700px;
+        margin: 20px 0;
+    }
+
+    .content p {
+        text-align: justify;
+    }
+
+    @media screen and (max-width:800px) {
+
+        .show-menu-btn,
+        .hide-menu-btn {
+            display: block;
+        }
+
+        .menu {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #333;
+            right: -100%;
+            top: 0;
+            text-align: center;
+            padding: 80px 0;
+            line-height: normal;
+        }
+
+        .menu a {
+            display: block;
+            padding: 20px;
+        }
+
+        .hide-menu-btn {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+
+        #chk:checked~.menu {
+            right: 0;
+        }
+    }
+
+    /* dropdown */
+    ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+    ul li {
+        float: left;
+        width: 200px;
+        height: 70px;
+        text-align: center;
+        font-size: 20px;
+        background-color: black;
+        margin-right: 5px;
+    }
+
+    ul li a {
+        display: block;
+    }
+
+    ul li ul li {
+        display: none;
+    }
+
+    ul li:hover ul li {
+        display: block;
+    }
+
+    #left {
+        float: left;
+        width: 23%;
+        padding: 20px;
+    }
+
+    .footer {
+        padding: 40px;
+        text-align: left;
+        background: rgba(171, 175, 180, 0.637);
+        float: inline-end;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid rgba(128, 131, 134, 0.637)
+    }
+
+    .pic {
+        padding: 5px;
+        text-align: left;
+        background: rgba(91, 134, 185, 0.637);
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid rgba(128, 131, 134, 0.637)
+    }
+
+    .textInf {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        margin-top: 30px;
+        padding: 50px;
+    }
+
+    .text {
+        display: flex;
+        flex: 2px;
+        justify-content: space-around;
+
+    }
+
+    .Inf {
+        display: block;
+        display: -webkit-box;
+        max-width: 500px;
+        height: 150px;
+        line-height: 1.5;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+
+    }
+
+    .titleh {
+        font-size: 25px;
+
+    }
+
+    .img {
+        width: 200px;
+        height: 150px;
+    }
+
+    .pislide {
+        display: flex;
+        justify-content: space-around;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <a href="#">
+            <h2 class="logo"><a href="Magazine.html">HiphopNVD</a></h2>
+        </a>
+        <input type="checkbox" id="chk">
+        <label for="chk" class="show-menu-btn">
+            <i class="fas fa-ellipsis-h"></i>
+        </label>
+
+        <ul class="menu">
+            <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Rap</a></li>
+            <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Graffity</a></li>
+            <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">DJ</a></li>
+            <li><a class="dropdown" href="#">Hiphopdance</a>
+                <ul>
+                    <li><a href="E:/JS/fundamental/PROJECT/BreakDance.html">Breakdance</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Locking</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Choreography</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/Popping.html">Popping</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Else</a> </li>
+                </ul>
+            </li>
+        </ul>
+        <label for="chk" class="hide-menu-btn">
+            <i class="fas fa-times"></i>
+        </label>
+    </div>
+    <br>
+    <ul id="left"></ul>
+
+    <ul id="right"></ul>
+    <br>
+    <div class="textInf">
+    <button><a href="#Link">Go to bottom</a></button>
+    <br>
+    <br>
+    <br>
+    <h1 id="top">Wonder Summer 2019 & The Ladies Call VN Qualifier</h1>
+    <p id="time">Hôm nay, Thứ sáu ngày 23 tháng 8 năm 2019 lúc 12:35:26</p>
+
+    <br>
+    <h2>I. LỜI NÓI ĐẦU:</h2>
+    <p>
+        Xin chào các bạn !
+        <br>
+        ...Với mục đích tổng kết hè, tạo sân chơi giao lưu, gắn kết dành cho các học viên nói riêng và
+        các bạn trẻ đam mê Street dance nói chung, Wonder Dance Studio trân trọng giới thiệu giải đấu “Wonder Summer
+        2019”
+        với 2 thể thức là: 1vs1 Freestyle JUNIOR và Student Showcase.Kèm theo đó là sự kết hợp
+        tổ chức: THE LADIES CALL Vol4 vòng loại Việt Nam, người thắng cuộc sẽ dành vé đi Singapore.
+        Giải Hip Hop 1vs1 dành riêng cho dancer NỮ.
+    </p>
+    <img src="E:/JS/fundamental/PROJECT/slideMGZ/wsv3.jpg" alt="Wonder Summer 2019 & The Ladies Call VN Qualifier"
+        style="width:700px;height:1000px">
+    <h2>I. Thời gian – Địa điểm:</h2>
+    <p>
+        .Thời gian: 12H – 18H Chủ nhật ngày 25/8/2019
+        <br>
+        .Địa điểm: Tầng 7, số 47 phố Thái Hà, Hà Nội - S-Fire Studio
+        <br>
+        *LƯU Ý: Đúng 12h -> 13h - Check in
+    </p>
+    <h2>II. Thể thức thi đấu:</h2>
+    <p>
+        +) Freestyle 1vs1 NEWBIE:
+        (Dành riêng cho các bạn dancer với kinh nghiệm dưới 3 năm thi đấu và chưa đạt giải nhất nhì bất kì giải đấu nào)
+        <br>
+        .Prelim chọn Top 16.
+        <br>
+        .Top 16-8: Mỗi thí sinh 1 round.
+        <br>
+        .Top 4-Final: Mỗi thí sinh 2 rounds.
+        <br>
+        +) Showcase:
+        (Dành riêng cho các lớp học của studio. Mỗi bài dự thi dưới 3 phút.)
+        <br>
+        Các lớp:
+        Hiphop Rùa - Popping Nam Dynamic - Waacking C2 Low - Hiphop Choreography Táo - Urban Choreography Lâm - Girl
+        Style Tae Nhi
+        <br>
+        +) Hiphop FEMALE 1vs1:
+        Dành riêng cho các bạn nữ)
+        <br>
+        .Prelim chọn Top 16.
+        <br>
+        .Top 16-8: Mỗi thí sinh 1 round.
+        <br>
+        .Top 4-Final: Mỗi thí sinh 2 rounds.
+        <h2>III. Ban giám khảo:</h2>
+        +) Freestyle Newbie 1vs1:
+        <br>
+        . TF Star (Milkyway Crew)
+        <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/WonderSummer/TF.jpg" alt="TFstar"
+            style="width:700px;height:500px">
+        <br>. Dancer Tun (Last Fire Crew)
+        + Showcase: Tun (Last Fire Crew)
+        <br>
+        <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/WonderSummer/Tun.jpg" alt="Tun"
+            style="width:450px;height:700px">
+
+        <br>. C2 Low (Soul Waackers)
+        <br>
+        <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/WonderSummer/Clow.jpg" alt="C2Low">
+
+        <br>+) Hiphop Female 1vs1: Xiao Mei (Singapore)
+        <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/WonderSummer/maxresdefault.jpg" alt="Xiao Mei"
+            style="width:700px;height:500px">
+    </p>
+    <h2>IV. DJ - MC: </h2>
+    <p>🗣Các bạn có thể thấy hàng năm Wonder đều thay đổi các gương mặt Giám khảo để các bạn có thể tiếp xúc với các
+        Dancer tài năng tại Hà Nội nhưng mà năm nào cũng chỉ mời 1 MC, 1 người không ai thay thế được.😅
+        <br>
+
+        🗣Duyên dáng, đẹp trai, hài hước, tài năng ăn nói là thiên bẩm của Popper đỉnh cao Hà Nội - CK Animation.
+        <br>
+        🗣Năm nay anh lại xuất hiện và sẽ mang đến cho giải đấu những giây phút rất vui vẻ bên cạnh giờ phút hồi hộp của
+        mỗi trận battle.</p>
+    <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/WonderSummer/Ck.jpg" alt="Ck animation"
+        style="width:700px;height:500px">
+    <p>🔥Lần này Wonder chơi mạnh tay bằng việc mời 1 DJ siêu chất lượng từ Sài Gòn, DJ Hanz (D.Outlawz Squad) - hiện
+        giờ là 1
+        trong những top DJ chơi giải hàng đầu tại Sài Gòn.
+        <br>
+        <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/WonderSummer/DJ.jpg" alt="Dj"
+            style="width:700px;height:500px">
+
+        🔥Là 1 popper/DJ đến từ D.Outlawz Squad ở Sài Gòn. Biết đến Popping từ năm 2008 và bắt đầu đến với niềm đam mê
+        DJ từ năm
+        2011 với thể loại Popping, dần dần đã tích lũy được nhiều kinh nghiệm hơn từ các giải đấu lớn trong khu vực, mở
+        rộng thêm
+        kỹ năng và chơi trong các giải đấu Hip Hop, Allstyles. Hanz mong rằng trong tương lai sẽ được đóng góp nhiều hơn
+        cho cộng
+        đồng Dancer Việt Nam.</p>
+    <h2>V.Giải thưởng: </h2>
+    +) Freestyle 1vs1:
+    <br>
+    .WINNER: Bằng khen + 1.000.000 VND tiền mặt + Khăn tập Wonder Dance Studio.
+    <br>
+    .2ND PLACE: Bằng khen + Khăn tập Wonder Dance Studio.
+    <br>
+    +) Hiphop Female 1vs1:
+    <br>.WINNER: Bằng khen + Battle guest The Ladies Call Vol4 Singapore (Vào thẳng Top32) + Free all workshop + Flight
+    ticket 2 chiều đi Singapore
+    <br>.2ND PLACE: Bằng khen
+
+    <br>+) Showcase:
+    <br>. 1 giải nhất: Bằng khen + 1.500.000 VND tiền mặt
+    <br>. 1 giải nhì: Bằng khen + 1.000.000 VND tiền mặt
+    <br>. 1 giải ba: Bằng khen + 500.000 VND tiền mặt
+    <br>. 3 giải khuyến khích: Bằng khen + 300.000 VND tiền mặt
+    <h2>VI. Lệ phí và Cách thức đăng kí:</h2>
+    <p>+) Lệ phí:
+        <br>
+        - Học viên studio: 100K(Lệ phí gồm cả vé vào cửa, thi showcase và freestyle battle)
+        <br>
+        - Dancer thi đấu battle:
+        <br>. Freestyle: 70K (online -> offline: 100K)
+        <br>. Hiphop Female: 200K
+        <br>
+        +) Vé vào cửa: 50K
+        (thí sinh và học viên ko cần mua vé vào cửa)
+
+        <br>+) Đăng kí trực tiếp tại event theo Form:
+        Name (Tên) :................
+        Nhóm (Crew):.........
+        <br>
+        Category (Thể Loại) : 1vs1 Freestyle - 1vs1 Hiphop Female
+        <br>
+        …………………………………………………….
+        <br>
+        Liên hệ: 0979399540 (Phương) - 0975 1376 95 (Cường)
+        <br>
+        Ban Tổ Chức: Wonder Dance Studio
+    </p>
+
+    <a id="Link" href="https://www.facebook.com/events/434770364042553/?active_tab=about">Link trang sự kiện</a>
+    <br>
+    <button><a href="#top">Go to top</a></button>
+    </div>
+    <br>
+
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HiphopNVD</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        background: rgb(224, 217, 217);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a,
+    button {
+        font-family: "Poppins", sans-serif;
+    }
+
+    .dropdown {
+        height: 10vh;
+        background-color: rgb(35, 60, 93);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+
+
+    }
+
+    .HiphopDance {
+        position: relative;
+    }
+
+    .HiphopDance ul {
+        position: absolute;
+        left: 0px;
+        margin-top: 10px;
+        width: 200px;
+        height: 200px;
+        background-color: rgb(238, 235, 235);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        list-style: none;
+        border-radius: 7px;
+        opacity: 0;
+        text-align: center;
+    }
+
+    .HiphopDance li {
+        width: 100%;
+        height: 100%;
+    }
+
+    .HiphopDance li:hover {
+        background-color: rgba(0, 0, 0, 0.466);
+    }
+
+    .HiphopDance a {
+        text-decoration: none;
+    }
+
+    .dropdown button {
+        background: none;
+        text-decoration: none;
+        font-size: 25px;
+        cursor: pointer;
+        pointer-events: all;
+        color: red;
+    }
+
+    .dropdown button:hover {
+        color: yellow;
+    }
+
+    .HiphopDance button:focus+ul {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0px);
+        z-index: 1;
+    }
+
+    #left {
+        float: left;
+        width: 23%;
+        padding: 20px;
+    }
+
+    .footer {
+        padding: 40px;
+        text-align: center;
+        background: rgba(74, 82, 93, 0.637);
+        float: inline-end;
+    }
+
+    .textInf {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 50px;
+
+    }
+
+    h1 {
+        font-size: 50px;
+        text-align: center;
+
+    }
+
+    #time {
+        text-align: right;
+        font-size: 13px;
+    }
+</style>
+
+<body>
+
+    <nav>
+        <div class="dropdown">
+            <button>Trang chủ</button>
+            <div class="HiphopDance">
+                <button>HiphopDance</button>
+                <ul>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Breakdance</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Popping</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Locking</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Choreography</a></li>
+                    <li><a href="E:/JS/fundamental/PROJECT/ComingSoon.html">Else</a></li>
+                </ul>
+            </div>
+            <button>Graffity</button>
+            <button>Rap</button>
+            <button>DJ</button>
+        </div>
+    </nav>
+
+    <br>
+
+
+    <ul id="left"></ul>
+
+    <ul id="right"></ul>
+    <br>
+    <div class="textInf">
+        <button><a href="#Link">Go to bottom</a></button>
+        <br>
+        <br>
+        <br>
+        <h1 id="top">Jr. Boogaloo Popping Workshop in Hanoi</h1>
+        <p id="time">Hôm nay, Thứ sáu ngày 23 tháng 8 năm 2019 lúc 12:35:26</p>
+
+        <br>
+        <p>Lần đầu tiên, master Jr. Boogaloo sẽ đến Hà Nội!!!
+            <br>
+            <img src="E:/JS/fundamental/PROJECT/MagazineInf.html/FloridaWS/Flo rida.jpg" alt="JrBoogaloo WS"
+                style="width:700px;height:300px">
+            👤 Một con người không cần phải liệt kê profile của ông ra nữa, nếu bạn là 1 người nhảy popping, bạn PHẢI
+            học thêm từ JR. BOOGALOO!
+            <br>
+
+            ❗️Dance, Popping, Waving, Tutting, Body Control, Timing, Mindset, Concept v.v...
+            Tất cả đều quy tụ đầy đủ trong người đàn ông này.
+            <br>
+            ❗️Mất cơ hội học workshop này sẽ rất tiếc đấy các bạn!!!
+            <br>
+            Không nói nhiều nữa, thông tin cụ thể đây nha:
+            <br>
+            🌐 Low Rida Crew present
+            <br>
+            *Jr. Boogaloo's Special Workshop
+            <br>
+            ❤️ Sponsored by Mr. Đức Bình ‘Seven’.
+            <br>
+            <br>
+            🏢 Low Rider Dance Studio
+            5/40 Trần Duy Hưng, Cầu Giấy, Hà Nội
+            <img src="Studio.jpg" alt="Studio" style="width:700px;height:500px">
+            <br>
+            ⏰ Thứ Bảy 14/9/2019 - 19:00
+            <br>
+            ❗️Giới hạn 50 người tham gia.
+            <br>
+            ✍️ Đăng kí:
+            <br>
+            - đóng học phí hết ngày 6/9: 500.000/người
+            <br>
+            - đóng học phí từ ngày 7/9: 700.000/người.
+            <br>Để đăng kí xin điền thông tin bao gồm tên & số điện thoại xuống bên dưới và chuyển khoản vào tài khoản
+            sau đó nhắn tin tới hotline nội dung ghi tên đăng kí của bạn
+            <br>
+            💳 Thông tin chuyển khoản:
+            <br>
+            Vietcombank: 0301 0002 96474, chi nhánh Sở Giao Dịch, chủ tk Vũ Trung Thu
+            <br>
+            Techcombank: 1902 7837 995686, chủ tk Vũ Trung Thu.
+            <br>
+            ☎️ Hotline liên hệ: 094.525.7770</p>
+
+        <a id="Link" href="https://www.facebook.com/events/459570878229064/">Link trang sự kiện</a>
+        <br>
+        <button><a href="#top">Go to top</a></button>
+    </div>
+    <br>
+
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+
+
+</body>
+
+</html>
